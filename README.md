@@ -7,17 +7,17 @@ A smart contract wallet where:
 
 
 Code summary:
-- Variables
+VARIABLES
 
-. Owner - The wallet owner
+- Owner - The wallet owner
 
-. Guardians have the following structure:
-    . An address
-    . A limit to which they can spend (default is set too 1ETH but they are able to increase this with the approval of 3 / 4 of the other guardians).
-    . An elected owner for the wallet
-    . The guardians are mapped based on a uint 0 - 4
- 
-. Limit request - responsible for increases for approved spending of the guardian
+- Guardians have the following structure:
+    - An address
+    - A limit to which they can spend (default is set too 1ETH but they are able to increase this with the approval of 3 / 4 of the other guardians).
+    - An elected owner for the wallet
+    - The guardians are mapped based on a uint 0 - 4
+  
+ - Limit request - responsible for increases for approved spending of the guardian
     . The submitting address
     . Requested increase
     . Votes For and Against (approved at 3 For, declined at more than 1)
