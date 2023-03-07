@@ -18,9 +18,9 @@ VARIABLES
     - The guardians are mapped based on a uint 0 - 4
   
  - Limit request - responsible for increases for approved spending of the guardian
-    . The submitting address
-    . Requested increase
-    . Votes For and Against (approved at 3 For, declined at more than 1)
-    . A uint alreadyVotedCounter - number of guardians who have voted on this request
-    . Mapping of this uint to the addresses (Will prevent double voting)
-    . Status of request (2 for pending, 1 for declined and 0 for approved)
+    - The submitting address
+    - Requested increase
+    - Votes For and Against (approved at 3 For, declined at more than 1)
+    - A uint alreadyVotedCounter - number of guardians who have voted on this request
+    - Mapping of this uint to the addresses (Will prevent double voting)
+    - Status of request (2 for pending, 1 for declined and 0 for approved)
