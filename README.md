@@ -6,7 +6,9 @@ A smart contract wallet where:
 - Each guardian can also spend up to an unathorised limit agreed upon by the other guardians
 
 
-Code summary:
+Please comment feedback and potential bugs or security issues! Love to learn :).
+
+
 VARIABLES
 
 - Owner - The wallet owner
@@ -24,3 +26,14 @@ VARIABLES
     - A uint alreadyVotedCounter - number of guardians who have voted on this request
     - Mapping of this uint to the addresses (Will prevent double voting)
     - Status of request (2 for pending, 1 for declined and 0 for approved)
+
+function deposit
+- Simply increments the contracts recorded balance by msg.value
+
+function setOwner
+- Verifies msg.sender is a guardian
+- Sets the new prefered owning address
+- Checks for a majority - if now 3 / 5 guardians have the _newAddress as their owner it will change the contract ownership
+
+function Withdrawal
+... in progress of completing
