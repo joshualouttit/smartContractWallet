@@ -90,12 +90,11 @@ contract SmartContractWallet {
 
     //REQUEST FUNCTIONS
     function requestIncreaseSpendingLimit(uint _increase) public {
+        verifyGuardian(msg.sender);
+        require(_increase > 0, "Increase must be greater than zero");
+
         uint internalCounter = requestCounter;
         requestCounter ++;
-
-        verifyGuardian(msg.sender);
-        
-        require(_increase > 0, "Increase must be greater than zero");
 
         //Set peramaters of request
         Requests[internalCounter].submitter = msg.sender;
