@@ -36,4 +36,9 @@ function setOwner
 - Checks for a majority - if now 3 / 5 guardians have the _newAddress as their owner it will change the contract ownership
 
 function Withdrawal
-... in progress of completing
+- Allows the owner to withdraw an amount up until the contract balance
+- Allows guardians to withdraw an amount approved by other guardians
+
+function requestIncreaseSpendingLimit
+- Two checks are placed before any changes are made (this was a bug in previous version
+- Stores current request number in a temporary variable and then increments the request counter. This prevents malicious attackers from attempting to 
