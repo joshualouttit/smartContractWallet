@@ -41,4 +41,19 @@ function Withdrawal
 
 function requestIncreaseSpendingLimit
 - Two checks are placed before any changes are made (this was a bug in previous version
-- Stores current request number in a temporary variable and then increments the request counter. This prevents malicious attackers from attempting to 
+- Stores current request number in a temporary variable and then increments the request counter. This prevents malicious attackers from attempting to overwrite the attributes of a limit request by calling the function again
+- Sets status of request to 2 for PENDING
+
+function voteOnRequests
+- Confirms the address hasn't already been actioned, the caller hasn't already voted, the caller is a guardian
+- Records guardian as a voter and places vote on request
+- Checks to see if minimum vote requirements have been met and alters status of request
+
+function cancelRequest
+- Allows submitter to withdraw / self decline a request if it has not already been actioned
+
+function verifyGuardian
+- Assisting function to the contract, returns guardianNumber (uint reference to guardian in mapping(uint => guardian) or raises an exception if msg.sender is not a guardian
+
+functions receive and fallback:
+- Call the deposit function
